@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Style Assessment - Discover How You Learn Best</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Scientifically-based assessment combining learning preferences with retention testing">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Save Status Indicator -->
+        <div id="save-indicator" class="save-indicator">
+            <span id="save-status">✓ Progress Auto-Saved</span>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h1>Discover Your Learning Style</h1>  
+                <p class="lead">This scientifically-based assessment combines learning preferences with retention testing to identify how you learn most effectively.</p>
+                
+                <!-- Progress Recovery Section -->
+                <div id="progress-recovery" class="progress-recovery hidden">
+                    <div class="recovery-card">
+                        <h3>Welcome Back!</h3>
+                        <p>We found your previous progress. Would you like to continue where you left off?</p>
+                        <div id="progress-summary" class="progress-summary"></div>
+                        <div class="recovery-actions">
+                            <button class="btn btn--primary" onclick="restoreProgress()">Continue Previous Session</button>
+                            <button class="btn btn--outline" onclick="startFresh()">Start Fresh</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="assessment-overview">
+                    <h3>Assessment Process (7 Steps)</h3>
+                    <div class="steps-grid">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-text">Choose unfamiliar topic</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-text">Complete VARK survey</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-text">Visual learning module</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-text">Auditory learning module</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div class="step-text">Reading/Writing module</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">6</div>
+                            <div class="step-text">Kinesthetic module</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">7</div>
+                            <div class="step-text">View your results</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn--primary btn--large btn--full-width" onclick="startAssessment()">
+                    Start Assessment
+                </button>
+                <p class="time-estimate">⏱️ Estimated time: 15-20 minutes</p>
+                
+                <div class="progress-management">
+                    <button class="btn btn--outline btn--small" onclick="clearAllProgress()">Clear Saved Progress</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic Selection Screen -->
+        <div id="topic-selection" class="screen">
+            <div class="content-wrapper">
+                <div class="step-indicator">
+                    <span class="step-current">Step 1 of 7:</span> Choose Your Topic
+                </div>
+                
+                <h2>Select the Topic You Know Least About</h2>
+                <p class="instruction-text">Choose the topic you are LEAST familiar with to ensure unbiased assessment results. This prevents prior knowledge from affecting your learning style evaluation.</p>
+                
+                <div class="topics-grid">
+                    <div class="topic-card" data-topic="marine_bioluminescence" onclick="selectTopic('marine_bioluminescence')">
+                        <div class="topic-icon">🌊</div>
+                        <h3>Marine Bioluminescence</h3>
+                        <p>The science behind light-producing organisms in the ocean</p>
+                    </div>
+                    <div class="topic-card" data-topic="ancient_cuneiform" onclick="selectTopic('ancient_cuneiform')">
+                        <div class="topic-icon">📜</div>
+                        <h3>Ancient Mesopotamian Cuneiform</h3>
+                        <p>The world's earliest known writing system from ancient Iraq</p>
+                    </div>
+                    <div class="topic-card" data-topic="quantum_entanglement" onclick="selectTopic('quantum_entanglement')">
+                        <div class="topic-icon">⚛️</div>
+                        <h3>Quantum Entanglement</h3>
+                        <p>Particles becoming interconnected regardless of distance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VARK Questionnaire -->
+        <div id="vark-screen" class="screen">
+            <div class="content-wrapper">
+                <div class="step-indicator">
+                    <span class="step-current">Step 2 of 7:</span> Learning Preferences Survey
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="vark-progress"></div>
+                </div>
+                <div class="question-counter">
+                    Question <span id="vark-current">1</span> of <span id="vark-total">5</span>
+                </div>
+                
+                <div id="vark-question" class="question-container">
+                    <!-- Questions populated by JavaScript -->
+                </div>
+                
+                <div class="question-nav">
+                    <button class="btn btn--outline" id="vark-prev" onclick="previousVarkQuestion()" disabled>Previous</button>
+                    <button class="btn btn--primary" id="vark-next" onclick="nextVarkQuestion()" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Module Selection -->
+        <div id="module-selection" class="screen">
+            <div class="content-wrapper">
+                <div class="step-indicator">
+                    <span class="step-current">Steps 3-6 of 7:</span> Learning Modules
+                </div>
+                
+                <h2>Complete All Learning Modules</h2>
+                <p class="instruction-text">Experience the same topic through 4 different learning styles. Each module teaches different aspects to prevent bias. Complete all modules for accurate results.</p>
+                
+                <div class="selected-topic-display" id="selected-topic-display">
+                    <!-- Populated by JavaScript -->
+                </div>
+                
+                <div class="modules-grid">
+                    <div class="module-card" data-module="visual" onclick="startModule('visual')">
+                        <div class="module-step">Step 3</div>
+                        <div class="module-icon">👁️</div>
+                        <h3>Visual Learning</h3>
+                        <p>Interactive diagrams and visual representations</p>
+                        <div class="module-status" id="visual-status">Not Started</div>
+                    </div>
+                    <div class="module-card" data-module="auditory" onclick="startModule('auditory')">
+                        <div class="module-step">Step 4</div>
+                        <div class="module-icon">👂</div>
+                        <h3>Auditory Learning</h3>
+                        <p>Audio explanations with playback controls</p>
+                        <div class="module-status" id="auditory-status">Not Started</div>
+                    </div>
+                    <div class="module-card" data-module="reading" onclick="startModule('reading')">
+                        <div class="module-step">Step 5</div>
+                        <div class="module-icon">📖</div>
+                        <h3>Reading/Writing</h3>
+                        <p>Text-based content with note-taking</p>
+                        <div class="module-status" id="reading-status">Not Started</div>
+                    </div>
+                    <div class="module-card" data-module="kinesthetic" onclick="startModule('kinesthetic')">
+                        <div class="module-step">Step 6</div>
+                        <div class="module-icon">✋</div>
+                        <h3>Kinesthetic Learning</h3>
+                        <p>Interactive drag-and-drop activities</p>
+                        <div class="module-status" id="kinesthetic-status">Not Started</div>
+                    </div>
+                </div>
+                
+                <div class="module-progress">
+                    <div class="progress-info">
+                        <span id="completed-modules">0</span>/4 modules completed
+                    </div>
+                    <button class="btn btn--primary btn--large" id="results-btn" onclick="showResults()" style="display: none;">
+                        Step 7: View Results
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Module Content -->
+        <div id="learning-module" class="screen">
+            <div class="content-wrapper">
+                <div class="module-header">
+                    <button class="btn btn--outline btn--small" onclick="backToModules()">← Back to Modules</button>
+                    <div class="module-title-container">
+                        <div class="step-indicator" id="current-step-indicator">Step 3 of 7</div>
+                        <h2 id="module-title">Visual Learning</h2>
+                    </div>
+                    <div class="module-timer">
+                        <span id="study-timer">Study Time: 0:00</span>
+                    </div>
+                </div>
+                
+                <div class="module-body" id="module-content">
+                    <!-- Content populated by JavaScript -->
+                </div>
+                
+                <div class="module-footer">
+                    <button class="btn btn--primary btn--large btn--full-width" id="start-test-btn" onclick="startRetentionTest()">
+                        Take Retention Test
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Retention Test -->
+        <div id="retention-test" class="screen">
+            <div class="content-wrapper">
+                <div class="test-header">
+                    <div class="step-indicator">Testing Your Retention</div>
+                    <h2>Retention Test</h2>
+                    <div class="test-info">
+                        <span id="test-type">Immediate Recall</span> - Question <span id="test-question-counter">1 of 3</span>
+                    </div>
+                </div>
+                
+                <div id="test-question" class="question-container">
+                    <!-- Questions populated by JavaScript -->
+                </div>
+                
+                <div class="question-nav">
+                    <button class="btn btn--outline" id="test-prev" onclick="previousTestQuestion()" disabled>Previous</button>
+                    <button class="btn btn--primary" id="test-next" onclick="nextTestQuestion()" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="content-wrapper">
+                <div class="step-indicator">
+                    <span class="step-current">Step 7 of 7:</span> Your Results
+                </div>
+                
+                <h1>Your Learning Style Profile</h1>
+                
+                <div class="results-summary">
+                    <div class="primary-style">
+                        <h2>Your Primary Learning Style</h2>
+                        <div class="style-badge" id="primary-style-badge">
+                            <div class="style-icon" id="primary-style-icon">👁️</div>
+                            <div class="style-name" id="primary-style-name">Visual Learner</div>
+                        </div>
+                        <p id="primary-style-description">You learn best through visual representations, diagrams, and charts.</p>
+                    </div>
+                </div>
+                
+                <div class="results-charts">
+                    <div class="chart-container">
+                        <h3>Learning Preferences</h3>
+                        <div style="position: relative; height: 300px;">
+                            <canvas id="vark-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Retention Performance</h3>
+                        <div style="position: relative; height: 300px;">
+                            <canvas id="performance-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-recommendations">
+                    <h3>Personalized Learning Strategies</h3>
+                    <div id="recommendations-list">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn--outline btn--full-width" onclick="restartAssessment()">Take Assessment Again</button>
+                    <button class="btn btn--primary btn--full-width" onclick="downloadResults()">Download Results</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h2>Analyzing Your Results...</h2>
+                <p>Processing your learning preferences and performance data</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

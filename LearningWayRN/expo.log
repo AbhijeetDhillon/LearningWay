@@ -1,0 +1,54 @@
+Starting project at /Users/abhijeetsinghdhillon/Projects/LearningWay/LearningWay/LearningWayRN
+Starting Metro Bundler
+The following packages should be updated for best compatibility with the installed expo version:
+  @react-native-async-storage/async-storage@2.2.0 - expected version: 2.1.2
+  react-native-safe-area-context@5.5.2 - expected version: 5.4.0
+  react-native-svg@15.12.1 - expected version: 15.11.2
+Your project may not work correctly until you install the expected versions of the packages.
+Waiting on http://localhost:3000
+Logs for your project will appear below.
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ node_modules/expo-router/node/render.js ▓░░░░░░░░░░░░░░░  6.3% (11/45)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 70.5% (650/794)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 75.9% (637/762)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 83.8% (812/887)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 88.5% (856/910)
+λ Bundled 10247ms node_modules/expo-router/node/render.js (960 modules)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+λ  WARN  Route "./contexts/AssessmentContext.tsx" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/topics.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/varkQuestions.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./styles/theme.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./types/index.ts" is missing the required default export. Ensure a React component is exported as default. 
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.9% (1009/1009)
+Web Bundled 12369ms node_modules/expo-router/entry.js (1009 modules)
+λ Bundled 49ms node_modules/expo-router/node/render.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+λ  WARN  Route "./contexts/AssessmentContext.tsx" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/topics.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/varkQuestions.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./styles/theme.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./types/index.ts" is missing the required default export. Ensure a React component is exported as default. 
+Web Bundled 718ms node_modules/expo-router/entry.js (1 module)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓░░░░░░░░░░ 43.2% (384/584)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 78.9% (814/929)
+Web Bundled 8627ms node_modules/expo-router/entry.js (1010 modules)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 133ms node_modules/expo-router/node/render.js (1 module)
+Web Bundled 930ms node_modules/expo-router/entry.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+λ  WARN  Route "./contexts/AssessmentContext.tsx" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/topics.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/varkQuestions.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./styles/theme.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./types/index.ts" is missing the required default export. Ensure a React component is exported as default. 
+Web node_modules/expo-router/entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 399ms node_modules/expo-router/entry.js (1 module)
+λ Bundled 503ms node_modules/expo-router/node/render.js (1 module)
+λ  WARN  "shadow*" style props are deprecated. Use "boxShadow". 
+λ  WARN  Route "./contexts/AssessmentContext.tsx" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/topics.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./data/varkQuestions.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./styles/theme.ts" is missing the required default export. Ensure a React component is exported as default. 
+λ  WARN  Route "./types/index.ts" is missing the required default export. Ensure a React component is exported as default. 

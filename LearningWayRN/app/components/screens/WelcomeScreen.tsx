@@ -7,9 +7,8 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
-import { useAssessment } from '../contexts/AssessmentContext';
-import { globalStyles, colors, spacing, typography, borderRadius, shadows } from '../styles/theme';
-import { ScreenProps } from '../types';
+import { useAssessment } from '../../contexts/AssessmentContext';
+import { globalStyles, colors, spacing, typography, borderRadius, shadows } from '../../styles/theme';
 
 interface StepItemProps {
   number: number;
@@ -25,27 +24,29 @@ const StepItem: React.FC<StepItemProps> = ({ number, text }) => (
   </View>
 );
 
-const WelcomeScreen: React.FC<ScreenProps> = ({ navigation }) => {
+interface WelcomeScreenProps {
+  startAssessment: () => void;
+  navigateToScreen: (screen: string) => void;
+  restartAssessment: () => void;
+}
+
+const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ startAssessment }) => {
   const { state, clearProgress } = useAssessment();
   const { progress } = state;
 
   const hasProgress = progress.selectedTopic || progress.varkCompleted || Object.keys(progress.moduleProgress).length > 0;
 
-  const startAssessment = () => {
-    navigation.navigate('TopicSelection');
-  };
-
   const continueAssessment = () => {
     if (progress.completed) {
-      navigation.navigate('Results');
+      // Will auto-navigate via useEffect in main app
     } else if (Object.keys(progress.moduleProgress).length > 0) {
-      navigation.navigate('ModuleSelection');
+      // Will auto-navigate via useEffect in main app
     } else if (progress.varkCompleted) {
-      navigation.navigate('ModuleSelection');
+      // Will auto-navigate via useEffect in main app
     } else if (progress.selectedTopic) {
-      navigation.navigate('VarkQuestionnaire');
+      // Will auto-navigate via useEffect in main app
     } else {
-      navigation.navigate('TopicSelection');
+      startAssessment();
     }
   };
 

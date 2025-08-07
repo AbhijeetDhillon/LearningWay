@@ -1,15 +1,11 @@
-import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { AssessmentProvider } from './contexts/AssessmentContext';
+import LearningAssessmentApp from './components/LearningAssessmentApp';
 
 export default function RootLayout() {
   return (
     <AssessmentProvider>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="topic-selection" />
-        <Stack.Screen name="vark-questionnaire" />
-      </Stack>
+      <LearningAssessmentApp />
       <StatusBar style="auto" />
     </AssessmentProvider>
   );

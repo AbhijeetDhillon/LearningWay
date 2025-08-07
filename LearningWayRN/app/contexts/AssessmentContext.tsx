@@ -14,6 +14,8 @@ type AssessmentAction =
   | { type: 'LOAD_PROGRESS'; payload: AssessmentProgress }
   | { type: 'SELECT_TOPIC'; payload: string }
   | { type: 'COMPLETE_VARK'; payload: VarkResults }
+  | { type: 'START_MODULE_STUDY'; payload: { moduleId: string } }
+  | { type: 'COMPLETE_MODULE_TEST'; payload: { moduleId: string; score: number; answers: number } }
   | { type: 'UPDATE_MODULE_PROGRESS'; payload: { moduleId: string; progress: ModuleProgress } }
   | { type: 'COMPLETE_ASSESSMENT'; payload: FinalResults }
   | { type: 'RESET_ASSESSMENT' };
@@ -55,6 +57,43 @@ const assessmentReducer = (state: AssessmentState, action: AssessmentAction): As
           ...state.progress,
           varkCompleted: true,
           varkResults: action.payload,
+        },
+      };
+    
+    case 'START_MODULE_STUDY':
+      return {
+        ...state,
+        progress: {
+          ...state.progress,
+          moduleProgress: {
+            ...state.progress.moduleProgress,
+            [action.payload.moduleId]: {
+              moduleId: action.payload.moduleId,
+              studyStarted: true,
+              studyCompleted: false,
+              testCompleted: false,
+              completed: false,
+              studyTime: 0,
+              retentionScore: 0,
+            },
+          },
+        },
+      };
+    
+    case 'COMPLETE_MODULE_TEST':
+      return {
+        ...state,
+        progress: {
+          ...state.progress,
+          moduleProgress: {
+            ...state.progress.moduleProgress,
+            [action.payload.moduleId]: {
+              ...state.progress.moduleProgress[action.payload.moduleId],
+              testCompleted: true,
+              completed: true,
+              retentionScore: action.payload.score,
+            },
+          },
         },
       };
     

@@ -268,5 +268,261 @@ export const topics: Topic[] = [
         ]
       }
     }
+  },
+  {
+    id: 'ancient_cuneiform',
+    name: 'Ancient Mesopotamian Cuneiform',
+    description: 'The world\'s earliest known writing system from ancient Iraq',
+    icon: '📜',
+    content: {
+      visual: {
+        id: 'visual_cuneiform',
+        title: 'Visual Learning: Ancient Cuneiform Writing',
+        content: `Learning cuneiform through visual symbols and patterns`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'Where did cuneiform writing originate?',
+            options: ['Egypt', 'Mesopotamia', 'China', 'India'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      auditory: {
+        id: 'auditory_cuneiform',
+        title: 'Auditory Learning: Ancient Cuneiform',
+        content: `Listen to the history of cuneiform writing`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What material was used to write cuneiform?',
+            options: ['Paper', 'Clay tablets', 'Stone', 'Wood'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      reading: {
+        id: 'reading_cuneiform',
+        title: 'Reading/Writing: Ancient Cuneiform',
+        content: `Read about the development of cuneiform writing`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'When was cuneiform first developed?',
+            options: ['1000 BCE', '2000 BCE', '3200 BCE', '4000 BCE'],
+            correctAnswer: 2,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      kinesthetic: {
+        id: 'kinesthetic_cuneiform',
+        title: 'Kinesthetic Learning: Ancient Cuneiform',
+        content: `Practice writing cuneiform symbols`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What tool was used to write cuneiform?',
+            options: ['Brush', 'Stylus', 'Pen', 'Finger'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: 'quantum_entanglement',
+    name: 'Quantum Entanglement',
+    description: 'Particles becoming interconnected regardless of distance',
+    icon: '⚛️',
+    content: {
+      visual: {
+        id: 'visual_quantum',
+        title: 'Visual Learning: Quantum Entanglement',
+        content: `Understanding quantum entanglement through diagrams`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What happens when entangled particles are separated?',
+            options: ['They lose connection', 'They maintain instant correlation', 'They slow down', 'They disappear'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      auditory: {
+        id: 'auditory_quantum',
+        title: 'Auditory Learning: Quantum Entanglement',
+        content: `Listen to explanations of quantum mechanics`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'Who called quantum entanglement "spooky action at a distance"?',
+            options: ['Newton', 'Einstein', 'Bohr', 'Heisenberg'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      reading: {
+        id: 'reading_quantum',
+        title: 'Reading/Writing: Quantum Entanglement',
+        content: `Read about the theory and applications of quantum entanglement`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What is quantum entanglement primarily used for?',
+            options: ['Time travel', 'Quantum computing', 'Space travel', 'Weather prediction'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      kinesthetic: {
+        id: 'kinesthetic_quantum',
+        title: 'Kinesthetic Learning: Quantum Entanglement',
+        content: `Interactive simulations of quantum particles`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'In Bell\'s theorem experiments, what is measured?',
+            options: ['Speed', 'Position', 'Spin states', 'Mass'],
+            correctAnswer: 2,
+            type: 'multiple-choice'
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: 'mycorrhizal_networks',
+    name: 'Mycorrhizal Networks',
+    description: 'Underground fungal networks that connect forest ecosystems',
+    icon: '🍄',
+    content: {
+      visual: {
+        id: 'visual_mycorrhizal',
+        title: 'Visual Learning: Mycorrhizal Networks',
+        content: `See how fungi connect forest plants underground`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What do mycorrhizal fungi exchange with plants?',
+            options: ['Oxygen', 'Nutrients and water', 'Carbon dioxide', 'Sunlight'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      auditory: {
+        id: 'auditory_mycorrhizal',
+        title: 'Auditory Learning: Mycorrhizal Networks',
+        content: `Listen to the story of the "wood wide web"`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What is the "wood wide web"?',
+            options: ['Internet for trees', 'Mycorrhizal network', 'Root system', 'Branch connections'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      reading: {
+        id: 'reading_mycorrhizal',
+        title: 'Reading/Writing: Mycorrhizal Networks',
+        content: `Read about fungal-plant symbiosis`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What percentage of plant species form mycorrhizal relationships?',
+            options: ['50%', '70%', '80%', '90%'],
+            correctAnswer: 3,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      kinesthetic: {
+        id: 'kinesthetic_mycorrhizal',
+        title: 'Kinesthetic Learning: Mycorrhizal Networks',
+        content: `Build a model of fungal networks`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'How do fungi help plants during drought?',
+            options: ['Make rain', 'Share water from network', 'Create shade', 'Store sunlight'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: 'polyphonic_overtones',
+    name: 'Polyphonic Overtone Singing',
+    description: 'Traditional throat singing techniques from Central Asia',
+    icon: '🎵',
+    content: {
+      visual: {
+        id: 'visual_overtones',
+        title: 'Visual Learning: Overtone Singing',
+        content: `See sound wave patterns in overtone singing`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What creates the multiple tones in overtone singing?',
+            options: ['Multiple singers', 'Harmonic frequencies', 'Echo effects', 'Instruments'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      auditory: {
+        id: 'auditory_overtones',
+        title: 'Auditory Learning: Overtone Singing',
+        content: `Listen to traditional Tuvan throat singing`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'Where did Tuvan throat singing originate?',
+            options: ['Mongolia', 'Tibet', 'Siberia', 'Kazakhstan'],
+            correctAnswer: 2,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      reading: {
+        id: 'reading_overtones',
+        title: 'Reading/Writing: Overtone Singing',
+        content: `Read about the science of overtone production`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What part of the throat is most important for overtone singing?',
+            options: ['Vocal cords', 'Throat cavity resonance', 'Tongue position', 'All of the above'],
+            correctAnswer: 3,
+            type: 'multiple-choice'
+          }
+        ]
+      },
+      kinesthetic: {
+        id: 'kinesthetic_overtones',
+        title: 'Kinesthetic Learning: Overtone Singing',
+        content: `Practice throat singing techniques`,
+        testQuestions: [
+          {
+            id: 'q1',
+            question: 'What is the fundamental technique in throat singing?',
+            options: ['Breathing deeply', 'Controlling throat muscles', 'Speaking loudly', 'Singing fast'],
+            correctAnswer: 1,
+            type: 'multiple-choice'
+          }
+        ]
+      }
+    }
   }
 ];
